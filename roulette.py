@@ -13,8 +13,7 @@ Roulette is here for you to decide on what is the least worst or best option for
 4. You end up with your decision. 
 5. Offers to re-roll again (press enter)
 '''
-rlist = []
-max_length_list = 6 
+
 
 '''
 while len(rlist) < max_length_list:
@@ -22,16 +21,26 @@ while len(rlist) < max_length_list:
     rlist.append(item)
     print (rlist)
 '''
-for _ in range (0,6):
-    item = input("Enter up to 6 items to the Roulette:3 \n Type in 'done' to indicate you're done. ")
-    if item == "done":
-     break
-    rlist.append(item)
-    print (rlist)
+def game():
+    rlist = []
+    max_length_list = 6 
+    for _ in range (0,6):
+        item = input("Enter up to 6 items to the Roulette:3 \n Type in 'done' to indicate you're done. ")
+        if item == "done":
+            break
+        rlist.append(item)
+        print (rlist)
 
-print ("These are your options: ") #I know that I can combine these two in one line 
-print (rlist)
-print('Begin roll now!\n You got... ')
-print (random.choice(rlist))
+    print ("These are your options: ") #I know that I can combine these two in one line 
+    print (rlist)
+    print('Begin roll now!\n You got... ')
+    print (random.choice(rlist))
+    c = input("Press enter to restart again or 'n' to quit")
+    if c == 'n':
+        print('Good games!')
+    else:
+        game()
+
+game()
 #Some line that sends it back to the top of the command line again (Try again? Y/N)
 # Y for re-roll and N to break 
